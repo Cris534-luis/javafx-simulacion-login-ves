@@ -4,17 +4,26 @@
  */
 package com.cristianluis.system;
 
+import com.cristianluis.controller.SceneManager;
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 /**
  *
  * @author informatica
  */
-public class ClasePrincipal {
+public class ClasePrincipal extends Application {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        launch ( args );
     }
-    
+    @Override
+    public void start( Stage escenarioRaiz ){
+        SceneManager.getInstanciaSceneManager().setEscenarioPrinsipal(escenarioRaiz);
+        SceneManager.getInstanciaSceneManager().ventanaLogin();
+    }
 }
