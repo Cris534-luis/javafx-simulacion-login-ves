@@ -32,7 +32,7 @@ public class SceneManager {
           this.escenarioPrincipal.initStyle(StageStyle.TRANSPARENT);
         LoginView login = LoginView.getInstanciaLoginView();
 
-        cambiarEscena(login, 650, 500);
+        cambiarEscena(login, 450, 500);
           this.escenaPrincipal.setFill(Color.TRANSPARENT);
           new LoginController(login);
 

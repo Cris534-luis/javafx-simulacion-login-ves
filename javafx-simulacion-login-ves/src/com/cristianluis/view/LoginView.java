@@ -44,10 +44,11 @@ public class LoginView extends BorderPane{
     private GridPane formulario;
     private ImageView imgLogoLogin;
     private Button btnIniciarSesion;
-
+    private String RUTA_ESTILOS = "/com/cristianluis/style/ ";
  
     
     private LoginView(){
+        this.getStylesheets().add(RUTA_ESTILOS +"LoginStyles.css");
         this.setPadding( new Insets(15) );
         
         this.setBorder( new Border(
@@ -89,6 +90,9 @@ public class LoginView extends BorderPane{
         formulario.add(lblClave, 0, 1);
         formulario.add(pwdClave, 1, 1);
         
+        // --- SE AGREGA LA INICIALIZACIÓN DEL BOTÓN ---
+        btnIniciarSesion = new Button("Iniciar Sesión");
+        
         imgLogoLogin = new ImageView(new ImageController().getImageLogin("logo"));
         imgLogoLogin.setFitWidth(100);
         imgLogoLogin.setFitHeight(100);
@@ -96,9 +100,9 @@ public class LoginView extends BorderPane{
         
         cajaVertical.setAlignment(Pos.CENTER);
         
-        
+        // Ahora btnIniciarSesion ya no es null
         cajaVertical.getChildren().addAll(imgLogoLogin, formulario, btnIniciarSesion);
-         this.setCenter(cajaVertical );
+        this.setCenter(cajaVertical );
         
     }
 
@@ -134,6 +138,67 @@ public class LoginView extends BorderPane{
 
     public void setBarraDeOpciones(HBox barraDeOpciones) {
         this.barraDeOpciones = barraDeOpciones;
+    }
+    
+    // Opcional: Getter para acceder al botón de iniciar sesión desde un controlador
+    public Button getBtnIniciarSesion() {
+        return btnIniciarSesion;
+    }
+
+    public VBox getCajaVertical() {
+        return cajaVertical;
+    }
+
+    public void setCajaVertical(VBox cajaVertical) {
+        this.cajaVertical = cajaVertical;
+    }
+
+    public Label getLblNombreUsuario() {
+        return lblNombreUsuario;
+    }
+
+    public void setLblNombreUsuario(Label lblNombreUsuario) {
+        this.lblNombreUsuario = lblNombreUsuario;
+    }
+
+    public TextField getTxtNombreUsuario() {
+        return txtNombreUsuario;
+    }
+
+    public void setTxtNombreUsuario(TextField txtNombreUsuario) {
+        this.txtNombreUsuario = txtNombreUsuario;
+    }
+
+    public Label getLblClave() {
+        return lblClave;
+    }
+
+    public void setLblClave(Label lblClave) {
+        this.lblClave = lblClave;
+    }
+
+    public PasswordField getPwdClave() {
+        return pwdClave;
+    }
+
+    public void setPwdClave(PasswordField pwdClave) {
+        this.pwdClave = pwdClave;
+    }
+
+    public GridPane getFormulario() {
+        return formulario;
+    }
+
+    public void setFormulario(GridPane formulario) {
+        this.formulario = formulario;
+    }
+
+    public ImageView getImgLogoLogin() {
+        return imgLogoLogin;
+    }
+
+    public void setImgLogoLogin(ImageView imgLogoLogin) {
+        this.imgLogoLogin = imgLogoLogin;
     }
     
     

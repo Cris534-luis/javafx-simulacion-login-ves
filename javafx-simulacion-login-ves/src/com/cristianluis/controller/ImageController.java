@@ -18,10 +18,10 @@ public class ImageController {
         
         switch (nombreImagen){
             case "logo":
-                crearImagen = new Image(RUTA_IMAGENES + "login-logo-png");
+                crearImagen = new Image(RUTA_IMAGENES + "login-logo.png");
                 break;
             default:
-                crearImagen = new Image(RUTA_IMAGENES + "login-logo-png");
+                crearImagen = new Image(RUTA_IMAGENES + "login-logo.png");
         }
         return crearImagen;
     }
